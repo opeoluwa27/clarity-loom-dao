@@ -12,6 +12,10 @@ depends_on = []
 path = "contracts/loom-token.clar"
 depends_on = []
 
+[contracts.loom-treasury]
+path = "contracts/loom-treasury.clar"
+depends_on = []
+
 [repl]
 costs_version = 2
 parser_version = 2

@@ -1,4 +1,5 @@
 ;; LOOM Governance Token
+
 (define-fungible-token loom-token)
 
 (define-constant contract-owner tx-sender)
@@ -21,4 +22,14 @@
     (asserts! (is-eq tx-sender contract-owner) err-owner-only)
     (ft-mint? loom-token amount recipient)
   )
+)
+
+;; Get token balance
+(define-read-only (get-balance (account principal))
+  (ft-get-balance loom-token account)
+)
+
+;; Get token URI
+(define-read-only (get-token-uri)
+  (var-get token-uri)
 )
